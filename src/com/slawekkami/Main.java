@@ -13,8 +13,8 @@ public class Main {
         /*Scanner scanner = new Scanner(new File(file));
         while (scanner.hasNextLine()) {
             System.out.println(scanner.nextLine());
-        }*/
-        scanner.close();
+        }
+        scanner.close();*/
         System.out.println("W pliku '" +file+"' jest:");
         System.out.println("Znaki drukowalne:       " + iloscZnak(file));
         System.out.println("Znaki Białe:            " + iloscBialych(file));
@@ -32,14 +32,14 @@ public class Main {
     }
 
     public static int iloscZnak(String plik)throws FileNotFoundException {
-        Scanner znaki = new Scanner(new File(plik)).useDelimiter("[^ \\t\\n\\x0B\\f\\r]");
+        Scanner znaki = new Scanner(new File(plik)).useDelimiter("[^\\s]");      //[^ \\t\\n\\x0B\\f\\r]");
         int znak = 0;
         while (znaki.hasNext()) {
             znaki.next();
             znak++;
         }
         znaki.close();
-        return znak-1;
+        return znak;
     }
 
     public static int iloscBialych(String plik)throws FileNotFoundException {
@@ -50,7 +50,7 @@ public class Main {
             bialy++;
         }
         bialeZnaki.close();
-        return bialy-1;
+        return bialy;
     }
 
 
