@@ -1,0 +1,6 @@
+﻿to jest plik testsowy.
+Sa tu znaki puste takie jak spacje, 	tabulatory, karetki czyli przenieszenie wiersza.
+
+
+
+Czy program wskaze poprawne liczby?
