@@ -41,7 +41,7 @@ public class Main {
     }
     // metoda zwraca ilosc znakow drukowalnych
     public static int iloscZnak(String plik)throws FileNotFoundException {
-        Scanner znaki = new Scanner(new File(plik)).useDelimiter("[^\\s]");      //[^ \\t\\n\\x0B\\f\\r]");
+        Scanner znaki = new Scanner(new File(plik)).useDelimiter("[\\x00-\\x7F]");      //znaki alfa numeryczne
         int znak = 0;
         while (znaki.hasNext()) {
             znaki.next();
